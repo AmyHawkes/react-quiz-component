@@ -17,7 +17,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
+      "point": "20",
+      "customParams": {},
     },
     {
       "question": "ReactJS is developed by _____?",
@@ -31,7 +32,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
+      "point": "20",
+      "customParams": {},
     },
     {
       "question": "ReactJS is an MVC based framework?",
@@ -45,7 +47,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "10"
+      "point": "10",
+      "customParams": {},
     },
     {
       "question": "Which of the following concepts is/are key to ReactJS?",
@@ -60,7 +63,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "30"
+      "point": "30",
+      "customParams": {},
     },
     {
       "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
@@ -76,7 +80,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
+      "point": "20",
+      "customParams": {},
     },
     {
       "question": "What are the advantages of React JS?",
@@ -92,7 +97,8 @@ export const quiz =  {
       "messageForCorrectAnswer": "Correct answer. Good job.",
       "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
       "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
+      "point": "20",
+      "customParams": {},
     },
   ]
 } 

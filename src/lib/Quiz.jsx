@@ -90,7 +90,7 @@ class Quiz extends Component {
   }
 
   render() {
-    const { quiz, shuffle, showDefaultResult, onComplete, customResultPage, showInstantFeedback, continueTillCorrect } = this.props;
+    const { quiz, shuffle, showDefaultResult, onComplete, customResultPage, showInstantFeedback, continueTillCorrect, displayCustomComponent } = this.props;
 
 
     if(!this.validateQuiz(quiz)) {
@@ -130,7 +130,7 @@ class Quiz extends Component {
           }
 
           {
-            this.state.start && <Core questions={questions} showDefaultResult={showDefaultResult} onComplete={onComplete} customResultPage={customResultPage} showInstantFeedback={showInstantFeedback} continueTillCorrect={continueTillCorrect} appLocale={appLocale}/>
+            this.state.start && <Core questions={questions} showDefaultResult={showDefaultResult} onComplete={onComplete} customResultPage={customResultPage} showInstantFeedback={showInstantFeedback} continueTillCorrect={continueTillCorrect} displayCustomComponent={displayCustomComponent} appLocale={appLocale}/>
           }
         </div>
       );

@@ -19,6 +19,7 @@ class Core extends Component {
       userInput: [],
       filteredValue: 'all',
       userAttempt: 1,
+      displayCustomComponent: this.props.displayCustomComponent ? this.props.displayCustomComponent : false,
       showDefaultResult: this.props.showDefaultResult != undefined ? this.props.showDefaultResult : true,
       onComplete: this.props.onComplete != undefined ? this.props.onComplete : null,
       customResultPage: this.props.customResultPage != undefined ? this.props.customResultPage : null,
@@ -326,11 +327,18 @@ class Core extends Component {
 
       // Default single to avoid code breaking due to automatic version upgrade
       let answerSelectionType = question.answerSelectionType || 'single';
-      
+
+      let customComponent = '';
+      if (this.displayCustomComponent) {
+        customComponent = this.displayCustomComponent(question.customParams ? question.customParams : [])
+      }
+
       return (
         <div className="result-answer-wrapper" key={index+1}>
 
-        <h3 dangerouslySetInnerHTML={this.rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/> 
+        <h3 dangerouslySetInnerHTML={this.rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/>
+        {customComponent}
+
         {question.questionPic && <img src={question.questionPic}/>}
         {
           this.renderTags(answerSelectionType, question.correctAnswer.length)
@@ -413,7 +421,8 @@ class Core extends Component {
       showInstantFeedback, 
       buttons, 
       onComplete, 
-      showNextQuestionButton, 
+      showNextQuestionButton,
+      displayCustomComponent,
       showDefaultResult, 
       customResultPage
     } = this.state;
@@ -449,7 +458,12 @@ class Core extends Component {
 
     // Default single to avoid code breaking due to automatic version upgrade
     answerSelectionType = answerSelectionType || 'single';
-    
+
+    let customComponent = '';
+    if (displayCustomComponent) {
+      customComponent = displayCustomComponent(question.customParams ? question.customParams : [])
+    }
+
     return (
       <div className="questionWrapper">
         {!endQuiz &&
@@ -466,7 +480,10 @@ class Core extends Component {
               }
             </div>
             <div>{ appLocale.question } { currentQuestionIndex + 1 }:</div>
-            <h3 dangerouslySetInnerHTML={this.rawMarkup(question.question)}/> 
+            <h3 dangerouslySetInnerHTML={this.rawMarkup(question.question)}/>
+
+            {customComponent}
+
             {question.questionPic && <img src={question.questionPic}/>}
             {
               this.renderTags(answerSelectionType, question.correctAnswer.length)
