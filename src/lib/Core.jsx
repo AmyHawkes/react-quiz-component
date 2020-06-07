@@ -334,22 +334,24 @@ class Core extends Component {
       }
 
       return (
-        <div className="result-answer-wrapper" key={index+1}>
-
-        <h3 dangerouslySetInnerHTML={this.rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/>
-        {customComponent}
-
-        {question.questionPic && <img src={question.questionPic}/>}
-        {
-          this.renderTags(answerSelectionType, question.correctAnswer.length)
-        }
-        <div className="result-answer">
+        <div>
+          <div className="result-custom-component">
+            {customComponent}
+          </div>
+          <div className="result-answer-wrapper" key={index+1}>
+            <h3 dangerouslySetInnerHTML={this.rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/>
+            {question.questionPic && <img src={question.questionPic}/>}
             {
-              this.renderAnswerInResult(question, userInputIndex)
+              this.renderTags(answerSelectionType, question.correctAnswer.length)
             }
+            <div className="result-answer">
+                {
+                  this.renderAnswerInResult(question, userInputIndex)
+                }
+            </div>
+            {this.renderExplanation(question, true)}
+          </div>
         </div>
-        {this.renderExplanation(question, true)}
-      </div>
       )
     })
   }
@@ -480,20 +482,23 @@ class Core extends Component {
               }
             </div>
             <div>{ appLocale.question } { currentQuestionIndex + 1 }:</div>
-            <h3 dangerouslySetInnerHTML={this.rawMarkup(question.question)}/>
+            <div className="question-custom-component">
+              {customComponent}
+            </div>
+            <div className="question-answer-wrapper">
+              <h3 dangerouslySetInnerHTML={this.rawMarkup(question.question)}/>
 
-            {customComponent}
-
-            {question.questionPic && <img src={question.questionPic}/>}
-            {
-              this.renderTags(answerSelectionType, question.correctAnswer.length)
-            }
-            {
-              this.renderAnswers(question, buttons)
-            }
-            { showNextQuestionButton &&
-              <div><button onClick={() => this.nextQuestion(currentQuestionIndex)} className="nextQuestionBtn btn">{appLocale.nextQuestionBtn}</button></div>
-            }
+              {question.questionPic && <img src={question.questionPic}/>}
+              {
+                this.renderTags(answerSelectionType, question.correctAnswer.length)
+              }
+              {
+                this.renderAnswers(question, buttons)
+              }
+              { showNextQuestionButton &&
+                <div><button onClick={() => this.nextQuestion(currentQuestionIndex)} className="nextQuestionBtn btn">{appLocale.nextQuestionBtn}</button></div>
+              }
+            </div>
           </div>
         }
         { endQuiz && showDefaultResult && customResultPage == null &&
